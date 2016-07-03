@@ -1,6 +1,6 @@
 import {join} from 'path';
 import {optimize as oz} from 'webpack';
-import routes from './routes';
+import routes from '../src/routes';
 
 let routesToEntry = routes => {
   let entries = {};
@@ -13,7 +13,7 @@ let routesToEntry = routes => {
 const loaders = [{test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/}];
 
 const clientOutput = {
-  path: join(__dirname, 'public/lib'),
+  path: join(__dirname, '../public/lib'),
   filename: '[hash]-[name].js',
   publicPath: '/lib/'
 };

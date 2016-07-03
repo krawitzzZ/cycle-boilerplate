@@ -15,7 +15,7 @@ export default {
     function () {
       this.plugin('done', result =>
         writeFileSync(
-          join(__dirname, 'hashes.json'),
+          join(__dirname, '../hashes.json'),
           JSON.stringify(result.toJson().assetsByChunkName)
         )
       );

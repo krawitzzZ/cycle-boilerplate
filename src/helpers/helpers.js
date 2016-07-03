@@ -4,6 +4,7 @@ const Event = (ev, mod = x => x) =>
 
 // Input(DOM.select('.some-input'))
 const Input = Event('input', x => x.pluck('target', 'value'));
+
 // Button(DOM.select('.some-button'))
 const Button = Event('click');
 

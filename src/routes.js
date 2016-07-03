@@ -1,7 +1,7 @@
 import {join} from 'path';
 
 const localJoin = (...args) => './' + join(...args);
-const appDir = 'src/js';
+const appDir = 'src/app';
 const pageDir = 'src/html';
 
 /* endpoint configs
@@ -13,9 +13,13 @@ export default [{
   page: 'index.pug',
   route: '/'
 }, {
-  app: 'about.js',
+  app: 'about/about.js',
   page: 'index.pug',
   route: '/about'
+}, {
+  app: 'counter/counter.js',
+  page: 'index.pug',
+  route: '/counter'
 }].map(({app, page, ...rest}, id) => ({
   app: localJoin(appDir, app),
   page: localJoin(pageDir, page),

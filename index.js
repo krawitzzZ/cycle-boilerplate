@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 else {
   log('[dev]');
   // use dev compilation and hot reloading
-  const config = require('./wp.dev.babel').default,
+  const config = require('./wp/wp.dev.babel.js').default,
     compiler = require('webpack')(config),
     dev = require('webpack-dev-middleware'),
     hot = require('webpack-hot-middleware');
@@ -43,6 +43,7 @@ else {
   devopt.hotAccept = require('./hot')
     .make(compiler, dynamicRequire, next => {
       for (let id in next) {
+        if (!next.hasOwnProperty(id)) continue;
         let entry = next[id];
         hashes[id] = entry instanceof Array ? entry[0] : entry;
       }
@@ -68,7 +69,7 @@ let endpoint = ({app, page, route, id}) => {
   );
 };
 
-import routes from './routes';
+import routes from './src/routes';
 routes.forEach(endpoint);
 
 app

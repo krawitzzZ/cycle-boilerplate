@@ -1,13 +1,13 @@
 import {Observable as $} from 'rx';
 import {div, br, i, button, h2, h4} from '@cycle/dom';
-import {Button} from './helpers';
+import {Button} from '../../helpers/helpers';
 
 export default ({DOM}) => {
   Button(DOM.select('.Home')).forEach(() => {
     window.location.href = '/';
   });
   Button(DOM.select('.Github')).forEach(() => {
-    window.location.href = 'https://github.com/edge/cyc';
+    window.location.href = 'https://github.com/krawitzzz';
   });
   return {
     DOM: $.just(
