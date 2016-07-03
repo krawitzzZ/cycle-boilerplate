@@ -1,5 +1,5 @@
-import {join} from 'path';
-import {optimize as oz} from 'webpack';
+import { join } from 'path';
+import { optimize as oz } from 'webpack';
 import routes from '../src/routes';
 
 let routesToEntry = routes => {
@@ -10,7 +10,7 @@ let routesToEntry = routes => {
   return entries;
 };
 
-const loaders = [{test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/}];
+const loaders = [{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }];
 
 const clientOutput = {
   path: join(__dirname, '../public/lib'),
@@ -22,11 +22,11 @@ const productionPlugins = [
   new oz.DedupePlugin(),
   new oz.OccurrenceOrderPlugin(),
   new oz.UglifyJsPlugin({
-    compressor: {screw_ie8: true, warnings: false}
+    compressor: { screw_ie8: true, warnings: false }
   }),
   new oz.AggressiveMergingPlugin()
 ];
 
 const entry = routesToEntry(routes);
 
-export {entry, clientOutput, loaders, productionPlugins}
+export { entry, clientOutput, loaders, productionPlugins }

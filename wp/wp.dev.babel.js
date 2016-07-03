@@ -1,10 +1,10 @@
-import w, {optimize as oz} from 'webpack';
-import {entry, clientOutput, loaders} from './wp.constants';
+import w, { optimize as oz } from 'webpack';
+import { entry, clientOutput, loaders } from './wp.constants';
 
 export default {
   entry,
   output: clientOutput,
-  module: {loaders},
+  module: { loaders },
   plugins: [
     new w.DefinePlugin({
       CLIENT: 'true'

@@ -1,10 +1,10 @@
-import {join} from 'path';
+import { join } from 'path';
 
 const localJoin = (...args) => './' + join(...args);
 const appDir = 'src/app';
 const pageDir = 'src/html';
 
-/* endpoint configs
+/* server endpoint configs
  app relative to ./src/js
  page relative to ./src/html
  */
@@ -20,7 +20,7 @@ export default [{
   app: 'counter/counter.js',
   page: 'index.pug',
   route: '/counter'
-}].map(({app, page, ...rest}, id) => ({
+}].map(({ app, page, ...rest }, id) => ({
   app: localJoin(appDir, app),
   page: localJoin(pageDir, page),
   id,

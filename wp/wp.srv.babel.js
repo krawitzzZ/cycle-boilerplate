@@ -1,6 +1,6 @@
 import w from 'webpack';
-import {join} from 'path';
-import {loaders, productionPlugins} from './wp.constants';
+import { join } from 'path';
+import { loaders, productionPlugins } from './wp.constants';
 import nodeExternals from 'webpack-node-externals';
 
 export default {

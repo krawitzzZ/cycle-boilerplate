@@ -1,6 +1,6 @@
 import express from 'express';
 import pug from 'pug';
-import {babel} from 'dynamic-require';
+import { babel } from 'dynamic-require';
 import morgan from 'morgan';
 
 global.CLIENT = false;
@@ -51,7 +51,7 @@ else {
 }
 
 // takes a config and creates a server endpoint
-let endpoint = ({app, page, route, id}) => {
+let endpoint = ({ app, page, route, id }) => {
   const template = pug.compileFile(page);
   let program = dynamicRequire(app).default;
 
@@ -64,7 +64,7 @@ let endpoint = ({app, page, route, id}) => {
     program()
       .sources.DOM
         .forEach(ssr =>
-          res.send(template({ssr, lib: 'lib/' + hashes[id]}))
+          res.send(template({ ssr, lib: 'lib/' + hashes[id] }))
         )
   );
 };
