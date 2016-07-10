@@ -9,7 +9,7 @@ const pageDir = 'src/html';
  page relative to ./src/html
  */
 export default [{
-  app: 'index.js',
+  app: 'main/index.js',
   page: 'index.pug',
   route: '/'
 }, {

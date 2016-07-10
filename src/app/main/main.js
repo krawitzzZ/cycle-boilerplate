@@ -1,6 +1,6 @@
 import { Observable as $ } from 'rx';
 import { div, br, label, input, button } from '@cycle/dom';
-import { Input, Button } from '../helpers/streamHelpers';
+import { Input, Button } from '../../helpers/streamHelpers';
 
 export default ({ DOM }) => {
   const height$ = Input(DOM.select('#Height'))
